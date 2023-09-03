@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}BlogPost{% endblock title %}
+{% block blogactive %} active{% endblock blogactive %}
+
+{% block body %}
+
+
+<div class="container my-4">
+
+    <div class="card">
+        
+
+
+        <div class="col p-4 d-flex flex-column position-static">
+           
+            <h2 class="mb-0">{{userpost.title}}</h2>
+            <div class="mb-1 text-muted"> {{userpost.date}} by <a href="/about">{{userpost.author}} ,</a></div>
+            <p class="mb-auto py-4">{{userpost.content}}</p>
+           
+          </div>
+
+      
+
+        
+      </div>
+
+    
+</div>
+
+
+{% endblock body %}
