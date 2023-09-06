@@ -10,4 +10,7 @@ urlpatterns = [
      path('contact', views.contact , name="contact"),
      path('search', views.search , name="search"),
      path('signup', views.handleSignUp , name="signup"),
+     path('login', views.handlelogin , name="login"),
+     path('logout', views.handlelogout , name="signup"),
+     path('createblog', views.createblog , name="createblog"),
 ]

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Write a Blog{% endblock title %}
+
+{% block body %}
+
+
+   <h2 style="text-align: center;" class="my-4">Write Your Blog Here</h2>
+ 
+   <div class="container">
+
+
+    <form method="post" action="/blog/postblog">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="title" class="form-control" name="title" id="title" required>
+      
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input type="text" class="form-control" name="author" id="author" required>
+        </div>
+        <div class="mb-3">
+            <label for="slug" class="form-label">Category</label>
+            <input type="text" class="form-control" name="slug" id="slug" required>
+          </div>
+        <div class="mb-3">
+            <label for="floatingTextarea2">Write content here</label>
+            <div class="form-floating">
+                
+                <textarea  class="form-control"  name="content" id="content" style="height: 300px"></textarea>
+               
+              </div>
+          </div>
+      
+        <button type="submit" class="btn btn-success">Publish</button>
+      </form>
+   </div>
+
+
+
+
+
+
+{% endblock body %}

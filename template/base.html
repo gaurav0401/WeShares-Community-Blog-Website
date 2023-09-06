@@ -9,8 +9,20 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {% block head %}{% endblock head %}
   <title>{% block title %}{% endblock title %} | WeShares</title>
+  <style>
+    footer{
+
+    
+background-color: rgb(237, 237, 237);
+color: black;
+margin-top: 20vh;
+
+}
+  </style>
 </head>
 
 <body>
@@ -44,76 +56,76 @@
 
         </ul>
 
-         
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Sign Up
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Sign Up Here</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        
-        <form method="post" action="/signup">
-          {% csrf_token %}
-          <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input required type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Choose unique @username (must be alphanumeric)">
-            
-          </div>
-
-          <div class="mb-3">
-            <label for="fname" class="form-label">First Name</label>
-            <input required type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" placeholder="Enter first name">
-            
-          </div>
-
-          <div class="mb-3">
-            <label for="lname" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" placeholder="Enter last name">
-            
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email ID">
-            
-          </div>
-          <div class="mb-3">
-            <label for="pass1" class="form-label">Password</label>
-            <input required  type="password" class="form-control" id="pass1" name="pass1" placeholder="Create your password">
-            <div id="emailHelp" class="form-text">We'll never share your password with anyone else.</div>
-          </div>
-
-          <div class="mb-3">
-            <label for="pass2" class="form-label">Re-enter Password</label>
-            <input required type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm your password">
-          </div>
-          
        
-          <div class="modal-footer">
-       
-            <button type="submit" class="btn btn-primary">Register</button>
-          </div>
-        </form>
-      </div>
-     
-    </div>
-  </div>
-</div>
 
-           
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Sign Up Here</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <form method="post" action="/signup">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input required type="text" class="form-control" id="username" name="username"
+                      aria-describedby="emailHelp" placeholder="Choose unique @username (must be alphanumeric)">
+
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input required type="text" class="form-control" id="fname" name="fname"
+                      aria-describedby="emailHelp" placeholder="Enter first name">
+
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp"
+                      placeholder="Enter last name">
+
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                      placeholder="Enter your email ID">
+
+                  </div>
+                  <div class="mb-3">
+                    <label for="pass1" class="form-label">Password</label>
+                    <input required type="password" class="form-control" id="pass1" name="pass1"
+                      placeholder="Create your password">
+                    <div id="emailHelp" class="form-text">We'll never share your password with anyone else.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="pass2" class="form-label">Re-enter Password</label>
+                    <input required type="password" class="form-control" id="pass2" name="pass2"
+                      placeholder="Confirm your password">
+                  </div>
+
+
+                  <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-primary">Register</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
 
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Sign In
-        </button>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -124,17 +136,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                
-                <form>
+
+                <form action="/login" method="post">
                   {% csrf_token %}
                   <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="email" placeholder="Enter username" class="form-control" name="username" id="userid" aria-describedby="emailHelp">
-                    
+                    <label for="loginusername" class="form-label">Username</label>
+                    <input type="text" placeholder="Enter username" class="form-control" name="loginusername"
+                      id="loginuserid" aria-describedby="emailHelp">
+
                   </div>
                   <div class="mb-3">
-                    <label for="Password" class="form-label">Password</label>
-                    <input type="password"  placeholder="Enter your password" class="form-control" name="Password" id="Password">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input type="password" placeholder="Enter your password" class="form-control" name="loginPassword"
+                      id="loginPassword">
                   </div>
                   <div class="modal-footer">
 
@@ -143,15 +157,35 @@
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                 </form>
               </div>
-             
+
             </div>
           </div>
         </div>
-        <form class="d-flex" method="get" action="/search">
+        <form class="d-flex mx-4" method="get" action="/search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query"
             id="query">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+
+        {% if user.is_authenticated %}
+        
+       
+        <big class="my-2" style="font-weight: 400; padding-right: 10px;">{{request.user}}</big>
+        <img src="static/pro.png" alt="" height="25px">
+        <button type="button" class="btn btn-success mx-4 my-2">
+          <a href="/logout" style="text-decoration: none; color: white;">Logout</a>
+        </button>
+      
+        {% else %}
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Sign Up
+        </button>
+
+        <button type="button" class="btn btn-success mx-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Login
+        </button>
+        {% endif %}
       </div>
     </div>
   </nav>
@@ -178,6 +212,45 @@
 
 
 
+  <footer class=" text-center    "   id="contact "  >
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        
+          <!--Call -->
+          <a class="btn btn-outline-dark btn-floating m-1" href="tel:7017501776" role="button"
+          ><i class="fa fa-phone"></i
+        ></a>
+        <!-- Linkedin -->
+        <a class="btn btn-outline-dark btn-floating m-1" href="https://www.linkedin.com/in/gaurav-bhatt-b927321a6/" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+
+         <!-- Github -->
+         <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/gaurav_04_01/" role="button"
+         ><i class="fab fa-instagram"></i
+       ></a>
+
+      
+
+        <!-- Email -->
+        <a class="btn btn-outline-dark btn-floating m-1" href="mailto:gauravbhatt0401@gmail.com" role="button"
+          ><i class="fa fa-envelope"></i
+        ></a>
+  
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center pb-3" >
+      © 2023 Copyright <br>
+      <a class="text-dark" href="#">Design & Developed by Gaurav Bhatt</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
 

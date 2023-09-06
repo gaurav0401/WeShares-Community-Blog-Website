@@ -8,7 +8,19 @@
 
 
 
-
+<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://source.unsplash.com/random/1600x500/?coding &1" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://source.unsplash.com/random/1600x500/?coding &2" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://source.unsplash.com/random/1600x500/?coding &3" alt="Third slide">
+    </div>
+  </div>
+</div> -->
    
   
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -18,47 +30,39 @@
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="https://source.unsplash.com/random/1600x300/?coding &1" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+      <div class="carousel-item active" data-bs-interval="10000" >
+        <img src="https://source.unsplash.com/random/1600x500/?Tech" class="d-block w-100" alt="..." style="opacity: 0.9;">
+        <div class="carousel-caption d-none d-md-block" style="opacity: 0.6; background-color: black; border-radius: 12px;">
+          <h4 style="color: whitesmoke; font-family: cursive;  opacity: 1; ">Emphasize educational and informative content to empower readers with valuable insights and skills.</h4>
+         
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="https://source.unsplash.com/random/1600x300/?coding &2" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+        <img src="https://source.unsplash.com/random/1600x500/?Travel" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block" style="opacity: 0.6; background-color: black; border-radius: 12px;" >
+          <h4 style="color: whitesmoke; font-family: cursive;  opacity: 1; ">WeShares will be a hub for bloggers, writers, and enthusiasts to publish and share their articles, stories, and insights on a wide range of topics.</h4>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://source.unsplash.com/random/1600x300/?coding &3" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+        <img src="https://source.unsplash.com/random/1600x500/?wellness" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block" style="opacity: 0.6; background-color: black; border-radius: 12px;">
+          <h4 style="color: whitesmoke; font-family: cursive;  opacity: 1; ">Stay updated with our latest posts, interact with our community, and follow us on social media platforms to be a part of the WeShares journey.</h4>
+        
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+   
   </div>
 
 
 
-  <div class="container my-3">
+  <div class="container my-3 mt-5">
     <main>
         <h1>Welcome to WeShares Community</h1>
-        <p class="fs-5 col-md-8">Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.</p>
+        <p class="fs-5 col-md-8 mb-4"> <big> WeShares</big> is a blog website that aims to provide a platform for sharing and exchanging ideas, knowledge, and stories across a wide range of topics. The website's primary focus is on fostering a sense of community and collaboration among its users. Whether it's sharing personal experiences, expertise, or insights, WeShares is the go-to destination for individuals looking to connect and engage with a like-minded audience.</p>
     
         <div class="mb-5">
-          <a href="/docs/5.0/examples/" class="btn btn-primary btn-lg px-4">Explore</a>
+          <a href="/createblog" class="btn btn-primary btn-lg px-4">Create a new  Blog</a>
         </div>
     
       </main>
@@ -68,16 +72,16 @@
   <div class="container my-3">
     <div class="card">
         <div class="card-header">
-          Featured Blogs
+          Recently Posted  Blogs
         </div>
 
-        {% for post in allpost %}
+        {% for post in allpost  %}
         <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary">By-{{post.author}}</strong>
+            <strong class="d-inline-block mb-2 text-primary">{{post.slug}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
-            <p class="card-text mb-auto">{{post.content}}</p>
-            <a href="/blog/{{post.slug}}" class="stretched-link">Continue reading</a>
+            <p class="card-text mb-auto">{{post.content| truncatechars:500}}</p>
+            <a href="/blog/{{post.slug}}" >Continue reading</a>
           </div>
 
           {% endfor %}

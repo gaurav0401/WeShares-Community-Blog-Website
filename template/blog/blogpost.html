@@ -9,23 +9,50 @@
 <div class="container my-4">
 
     <div class="card">
-        
+
 
 
         <div class="col p-4 d-flex flex-column position-static">
-           
+
             <h2 class="mb-0">{{userpost.title}}</h2>
+             
+        
             <div class="mb-1 text-muted"> {{userpost.date}} by <a href="/about">{{userpost.author}} ,</a></div>
             <p class="mb-auto py-4">{{userpost.content}}</p>
-           
-          </div>
 
-      
+            <div class="mb-2 mt-5">
+                <a href="deleteblog/{{userpost.sno}}" class="btn btn-danger btn-sm px-4">Delete This Article</a>
+              </div>
 
-        
-      </div>
-
+        </div>
     
+    </div>
+   
+
+</div>
+
+
+
+
+
+<div class="container mt-2">
+    <h2>Comments</h2>
+    <form action="/blog/postcomment" method="post">
+        {% csrf_token %}
+
+        <div class="form-floating">
+            <textarea class="form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Leave a comment here</label>
+          </div>
+          
+            <input type="hidden" name="postsno" value="{{userpost.sno}}">
+            <button type="submit" class="btn btn-success mt-4">Post Comment</button>
+          
+    </form>
+    <div class="row my-3">
+        <div class="col-md-2">image here</div>
+        <div class="col-md-10"><b>Gaurav</b> is a good boy</div>
+    </div>
 </div>
 
 

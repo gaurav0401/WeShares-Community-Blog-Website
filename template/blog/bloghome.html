@@ -15,9 +15,9 @@
           <h3>Articles by WeShares Community</h3>
         </div>
 
-        {% for post  in  allpost %}
+        {% for post  in  allpost reversed %}
         <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success">By-{{post.author}}</strong>
+            <strong class="d-inline-block mb-2 text-success">{{post.slug}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
             <p class="mb-auto">{{post.content| truncatechars:500}}</p>

@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse 
-from . import models
+from home.models import Contact
 from django.contrib.auth.models import User
 
 from datetime import datetime
@@ -9,10 +9,16 @@ from django.contrib import messages
 
 from blog import models
 
+from django.contrib.auth import logout, authenticate, login
+
+from blog.views import bloghome
+
+
+
 # Create your views here.
 
 def home(request):
-     allpost=models.post.objects.all()
+     allpost=models.post.objects.all()[::-2]
   
      context={'allpost':allpost}
 
@@ -32,7 +38,7 @@ def contact(request):
         if (len(name)<2 or len(email)<2  ):
             messages.error(request , "Please, first fill details before submitting")
         else:
-            contact=models.Contact(name=name , email=email, phone=phone , desc=desc , date=datetime.now())
+            contact=Contact(name=name , email=email, phone=phone , desc=desc , date=datetime.now())
             contact.save()
             messages.success(request, "Your response has been recorded, We will contact you soon.... ")
 
@@ -89,4 +95,29 @@ def handleSignUp(request):
 
     else:
         return HttpResponse("404- Not allowed")
+    
+
+def handlelogin(request):
+    if request.method == "POST":
+      user=request.POST['loginusername']
+      passwd=request.POST['loginPassword']
+      user=authenticate(username=user , password=passwd)
+      if user is not None:
+         login(request, user)
+         messages.success(request , f"Welcome back  {request.user.get_full_name()}")
+         return  redirect('home')
+      else:
+         messages.error(request , "Incorrect username or password.....try again")
+         return redirect('home')
+    return HttpResponse("404- Not Found")
+
+def handlelogout(request):
+    logout(request)
+    messages.success(request , f"You have been successfully logged out")
+    return redirect('home')
+
+
+
+def createblog(request):
+    return render(request , 'home/create.html')
     
