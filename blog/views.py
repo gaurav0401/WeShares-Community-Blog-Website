@@ -32,11 +32,14 @@ def postComment(request):
         user = request.user
         postsno = request.POST['postsno']
         post=models.post.objects.get(sno=postsno)
-        comment=models.handleComments(comment=comment , user=user , post=post)
-        comment.save()
-        messages.success(request , f"Your Comment has been recoreded...")
+        if (len(comment)==0):
+            messages.error(request, "Empty comments can't be posted.")
+        else:
+         comment=models.handleComments(comment=comment , user=user , post=post)
+         comment.save()
+         messages.success(request , f"Your Comment has been recorded...")
 
-    return redirect(f'/blog/{post.slug}')
+    return redirect(f'/blog/{post.slug}' )
 
 
 def postblog(request):

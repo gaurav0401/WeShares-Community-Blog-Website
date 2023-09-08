@@ -15,19 +15,19 @@
         <div class="col p-4 d-flex flex-column position-static">
 
             <h2 class="mb-0">{{userpost.title}}</h2>
-             
-        
+
+
             <div class="mb-1 text-muted"> {{userpost.date}} by <a href="/about">{{userpost.author}} ,</a></div>
             <p class="mb-auto py-4">{{userpost.content}}</p>
 
             <div class="mb-2 mt-5">
                 <a href="deleteblog/{{userpost.sno}}" class="btn btn-danger btn-sm px-4">Delete This Article</a>
-              </div>
+            </div>
 
         </div>
-    
+
     </div>
-   
+
 
 </div>
 
@@ -41,17 +41,37 @@
         {% csrf_token %}
 
         <div class="form-floating">
-            <textarea class="form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <textarea class="form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px"></textarea>
             <label for="floatingTextarea2">Leave a comment here</label>
-          </div>
-          
-            <input type="hidden" name="postsno" value="{{userpost.sno}}">
-            <button type="submit" class="btn btn-success mt-4">Post Comment</button>
-          
+        </div>
+
+        <input type="hidden" name="postsno" value="{{userpost.sno}}">
+        <button type="submit" class="btn btn-success mt-4">Post Comment</button>
+
     </form>
+
+
     <div class="row my-3">
-        <div class="col-md-2">image here</div>
-        <div class="col-md-10"><b>Gaurav</b> is a good boy</div>
+        <h5 class="mt-2">Recent Comments</h5>
+        <br><br>
+        {% for comment in comments %}
+       
+        <div class="col-md-1"><img class="rounded mx-auto d-block w-50 p-2" src="\static\pro.png" alt="no image"> </div>
+
+        <div class="col-md-11  mb-4  p-2 " style="background-color: whitesmoke;">
+            <b>{{comment.user.username}}</b>
+            at <small style="color: rgb(155, 155, 155);">{{comment.timestamp}}</small>
+            <br>
+            <div> {{comment.comment}}</div>
+        </div>
+
+
+
+
+
+        {% endfor %}
+
     </div>
 </div>
 
