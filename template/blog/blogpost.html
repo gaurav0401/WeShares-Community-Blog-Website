@@ -21,7 +21,11 @@
             <p class="mb-auto py-4">{{userpost.content}}</p>
 
             <div class="mb-2 mt-5">
+
+                {% if user.get_username == userpost.user.username %}
                 <a href="deleteblog/{{userpost.sno}}" class="btn btn-danger btn-sm px-4">Delete This Article</a>
+                {% endif %}
+               
             </div>
 
         </div>

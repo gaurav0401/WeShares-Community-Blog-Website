@@ -9,10 +9,11 @@ from django.utils.timezone import now
 class post(models.Model):
     sno=models.AutoField(primary_key=True)
     title=models.CharField(max_length=122)
-    content=models.CharField(max_length=5022)
+    content=models.CharField(max_length=10000)
     author=models.CharField(max_length=20)
     slug=models.CharField(max_length=120)
     date=models.DateTimeField()
+    user =models.ForeignKey(User, on_delete=models.CASCADE , null=True)
 
     def __str__(self):
         return self.title + 'by' + self.author

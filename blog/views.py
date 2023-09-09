@@ -49,11 +49,12 @@ def postblog(request):
          author=request.POST['author']
          slug=request.POST['slug']
          date=datetime.now()
+         user = request.user
 
          if (len(title)==0 or len(content)==0 or len(author)==0 or len(slug)==0):
             messages.error(request , "Please fill all the  fields properly before saving blog. ")
          else:
-            post=models.post(title=title, content=content , author=author, date=date , slug=slug)
+            post=models.post(title=title, content=content , author=author, date=date , slug=slug , user=user)
             post.save()
             messages.success(request , f"Your Blog has been created successfully...")
             return redirect(f'/blog/{post.slug}')
@@ -80,7 +81,7 @@ def contact(request):
     return render(request , 'home/contact.html')
 
 def deleteblog(request , sno):
-    if request.user.is_superuser:
+    if request.user.is_authenticated:
         post=models.post.objects.get(sno=sno)
      
         post.delete()
