@@ -20,26 +20,38 @@ def bloghome(request):
 def blogpost(request , slug):
     userpost=models.post.objects.filter(slug=slug).first()
     comments=models.handleComments.objects.filter(post=userpost)
-    context={'userpost':userpost , 'comments': comments }
+    total=models.handleComments.objects.filter(post=userpost).count()
+    context={'userpost':userpost , 'comments': comments , 'total':total }
 
 
     return render(request , 'blog/blogpost.html' , context)
 
 
 def postComment(request):
-    if request.method=='POST':
+    if request.user.is_authenticated:
+      if request.method=='POST' :
         comment= request.POST['comment']
         user = request.user
         postsno = request.POST['postsno']
+        parentsno = request.POST['parentsno']
         post=models.post.objects.get(sno=postsno)
+      
         if (len(comment)==0):
             messages.error(request, "Empty comments can't be posted.")
         else:
-         comment=models.handleComments(comment=comment , user=user , post=post)
+         if parentsno=="":
+            comment=models.handleComments(comment=comment , user=user , post=post)
+         else:
+             parent=models.handleComments.objects.get(sno=parentsno)
+             comment=models.handleComments(comment=comment , user=user , post=post , parent=parent)
          comment.save()
          messages.success(request , f"Your Comment has been recorded...")
+         return redirect(f'/blog/{post.slug}' )
+    else:
+        messages.warning(request , f"Login first to make comment on the article.")
+        return redirect('/blog/')
 
-    return redirect(f'/blog/{post.slug}' )
+    return redirect(f'/blog/' )
 
 
 def postblog(request):
