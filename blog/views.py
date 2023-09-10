@@ -3,9 +3,10 @@ from django.http import HttpResponse
 from blog.models import post , handleComments 
 from home.models import Contact
 from datetime import datetime
-
+from blog.templatetags import get_dict
 from . import models
 from django.contrib import messages 
+
 
 # Create your views here.
 
@@ -13,18 +14,35 @@ def bloghome(request):
     allpost=models.post.objects.all()
   
     context={'allpost':allpost}
+
+
     return render(request , 'blog/bloghome.html' , context)
 
+def blog(request ):
+    allpost=models.post.objects.all()
+  
+    context={'allpost':allpost}
+
+    return render(request , 'blog/bloghome.html' , context)
 
 
 def blogpost(request , slug):
     userpost=models.post.objects.filter(slug=slug).first()
-    comments=models.handleComments.objects.filter(post=userpost)
+    userpost.views+=1
+    userpost.save()
+    comments=models.handleComments.objects.filter(post=userpost , parent=None)
+    replies=models.handleComments.objects.filter(post=userpost).exclude(parent=None)
     total=models.handleComments.objects.filter(post=userpost).count()
-    context={'userpost':userpost , 'comments': comments , 'total':total }
+    repdict={}
+    for reply in replies:
+        if reply.parent.sno not in repdict.keys():
+            repdict[reply.parent.sno]= [reply]
+        else:
+            repdict[reply.parent.sno].append(reply)
+    context={'userpost':userpost , 'comments': comments , 'total':total , 'repdict':repdict }
 
 
-    return render(request , 'blog/blogpost.html' , context)
+    return render(request , 'blog/blogpost.html' , context )
 
 
 def postComment(request):
@@ -68,7 +86,7 @@ def postblog(request):
          else:
             post=models.post(title=title, content=content , author=author, date=date , slug=slug , user=user)
             post.save()
-            messages.success(request , f"Your Blog has been created successfully...")
+            messages.success(request , f"Your Blog has been published successfully...")
             return redirect(f'/blog/{post.slug}')
     else:
         messages.warning(request, "Please Login first to publish your article.")

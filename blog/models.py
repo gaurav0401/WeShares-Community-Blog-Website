@@ -13,6 +13,7 @@ class post(models.Model):
     author=models.CharField(max_length=20)
     slug=models.CharField(max_length=120)
     date=models.DateTimeField()
+    views=models.IntegerField( default=0)
     user =models.ForeignKey(User, on_delete=models.CASCADE , null=True)
 
     def __str__(self):

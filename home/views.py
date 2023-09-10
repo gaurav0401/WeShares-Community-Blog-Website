@@ -45,6 +45,8 @@ def contact(request):
     return render(request , 'home/contact.html')
 
 
+
+
 def search(request):
     query=request.GET['query']
     if len(query)==0:
