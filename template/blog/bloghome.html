@@ -1,28 +1,56 @@
 {% extends 'base.html' %}
-
+{% block head %} <link rel="stylesheet" href="static\CSS\style.css">{% endblock head %}
 {% block title %}Blog{% endblock title %}
 
 {% block blogactive %} active{% endblock blogactive %}
 
+
+
 {% block body %} 
 
+{% block css  %}
 
+<style>
 
-<div class="container my-4">
+body {
+    background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: whitesmoke;
+    font-family: 'poppins', sans-serif;
+    }
+    
+    @keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+ }
 
-    <div class="card">
+</style>
+
+{% endblock %}
+
+<div class="container my-5">
+
+    <div class="card" style="color: black;">
         <div class="card-header">
           <h3>Articles by WeShares Community</h3>
         </div>
 
         {% for post  in  allpost reversed %}
-        <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success">{{post.slug}}</strong>
+        <div class="col p-4 d-flex flex-column position-static" style=" background-color: rgb(50, 22, 72); color:white;">
+            <strong class="d-inline-block mb-2 " style=" color: rgb(178, 47, 71);">{{post.slug}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
             <p class="mb-auto">{{post.content| safe |truncatechars:500}}</p>
             <div class="my-2">
-                <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary"> Continue reading</a>
+                <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style=" background-color: purple; border-color: purple;"> Continue reading</a>
             </div>
           </div>
 
