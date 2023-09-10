@@ -36,15 +36,15 @@ body {
 
 {% endblock %}
 
-<div class="container my-5">
+<div class="container my-5" >
 
-    <div class="card" style="color: black;">
+    <div class="card" style=" background-color: rgb(50, 22, 72);" >
         <div class="card-header">
           <h3>Articles by WeShares Community</h3>
         </div>
 
         {% for post  in  allpost reversed %}
-        <div class="col p-4 d-flex flex-column position-static" style=" background-color: rgb(50, 22, 72); color:white;">
+        <div class="col p-4 d-flex flex-column position-static" style=" color:white;">
             <strong class="d-inline-block mb-2 " style=" color: rgb(178, 47, 71);">{{post.slug}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>

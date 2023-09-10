@@ -7,7 +7,7 @@
 
 <div class="container my-4">
      
-    <div class="card">
+    <div class="card" style=" background-color: rgb(50, 22, 72);">
         <div class="card-header">
           <h3>Search Results</h3>
           {% if allpost|length < 1 %}
@@ -19,12 +19,12 @@
        
         {% for post  in  allpost %}
         <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success">By-{{post.author}}</strong>
+            <strong class="d-inline-block mb-2 "  style="color: rgb(178, 47, 71);">By-{{post.author}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
             <p class="mb-auto">{{post.content| truncatechars:500}}</p>
             <div class="my-2">
-                <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary"> Continue reading</a>
+                <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style="background-color: purple; border-color: purple;"> Continue reading</a>
             </div>
           </div>
 

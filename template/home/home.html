@@ -71,14 +71,14 @@
   </div>  
 
 
-  <div class="container my-3" style=" ">
-    <div class="card">
-        <div class="card-header" style="color: black;">
+  <div class="container my-3" >
+    <div class="card" style=" background-color: rgb(50, 22, 72);">
+        <div class="card-header" >
           Recently Posted  Blogs
         </div>
 
         {% for post in allpost  %}
-        <div class="col p-4 d-flex flex-column position-static" style=" background-color: rgb(50, 22, 72);">
+        <div class="col p-4 d-flex flex-column position-static" >
             <strong class="d-inline-block mb-2 " style="color: rgb(178, 47, 71)">{{post.slug}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
