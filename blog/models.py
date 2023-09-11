@@ -1,12 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from ckeditor.fields import RichTextField
 
 
 class post(models.Model):
     sno=models.AutoField(primary_key=True)
     title=models.CharField(max_length=122)
-    content=models.CharField(max_length=10000)
+    # content=models.CharField(max_length=10000)
+    content=RichTextField(blank=True , null=True)
     author=models.CharField(max_length=20)
     slug=models.CharField(max_length=120)
     date=models.DateTimeField()

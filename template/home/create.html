@@ -12,6 +12,7 @@
 
     <form method="post" action="/blog/postblog">
         {% csrf_token %}
+        {{form.as_p}}
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input type="title" class="form-control" name="title" id="title" required placeholder="Write Title of the article">
