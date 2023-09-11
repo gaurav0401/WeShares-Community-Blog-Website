@@ -14,27 +14,27 @@
         {% csrf_token %}
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
-          <input type="title" class="form-control" name="title" id="title" required>
+          <input type="title" class="form-control" name="title" id="title" required placeholder="Write Title of the article">
       
         </div>
         <div class="mb-3">
           <label for="author" class="form-label">Author</label>
-          <input type="text" class="form-control" name="author" id="author" required>
+          <input type="text" class="form-control" name="author" id="author" required placeholder="Write author of the article">
         </div>
         <div class="mb-3">
             <label for="slug" class="form-label">Category</label>
-            <input type="text" class="form-control" name="slug" id="slug" required>
+            <input type="text" class="form-control" name="slug" id="slug" required  placeholder="Write category of the article">
           </div>
         <div class="mb-3">
             <label for="floatingTextarea2">Write content here</label>
             <div class="form-floating">
                 
-                <textarea  class="form-control"  name="content" id="content" style="height: 300px"></textarea>
-               
+                <textarea  class="form-control"  name="content" id="content" style="height: 300px" placeholder="Start writing your article..."></textarea>
+                <label for="floatingTextarea2" style="color: grey">Start writing your article....</label>
               </div>
           </div>
       
-        <button type="submit" class="btn btn-success">Publish</button>
+        <button type="submit" class="btn btn-success" style="background-color: purple; border-color: purple;">Publish</button>
       </form>
    </div>
 
