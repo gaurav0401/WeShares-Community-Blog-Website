@@ -5,35 +5,84 @@
 {% block aboutactive %} active{% endblock aboutactive %}
 {% block body %}
 
-{% block css  %}
+{% block css %}
 
 <style>
-
-body {
-    background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72));
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    color: whitesmoke;
-    font-family: 'poppins', sans-serif;
+    body {
+        background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color: whitesmoke;
+        font-family: 'poppins', sans-serif;
     }
-    
+
     @keyframes gradient {
-    0% {
-    background-position: 0% 50%;
-    }
-    50% {
-    background-position: 100% 50%;
-    }
-    100% {
-    background-position: 0% 50%;
-    }
- }
+        0% {
+            background-position: 0% 50%;
+        }
 
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    p big {
+        color: rgb(207, 181, 230);
+    }
+
+    .description p {
+
+        font-size: 18px;
+        font-family: 'Kalam', cursive;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+    .about-me {
+
+        background-color: rgb(50, 22, 72);
+        border-radius: 8px;
+        padding: 2em;
+        margin-bottom: 1.5em;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
 </style>
 
 {% endblock %}
-   
 
 
+<main class="container my-5">
+    <section class="about-me">
+        <!-- <div class="photo">
+            <img src="static/img/android-chrome-512x512.png" alt="Profile Photo" width="150px">
+        </div> -->
+        <br>
+        <div class="description">
+            <h2 style="color:  rgb(207, 181, 230);">Welcome to WeShares Community </h2>
+            <br>
+            <p class="px-1"> We're more than just a blog – we're a vibrant community of individuals from all walks of life, united by our passion for sharing knowledge, experiences, and ideas.
+                <br> <br>At WeShares Community, our mission is simple: to foster a welcoming and supportive environment where people can come together to exchange insights, stories, and expertise. Whether you're an avid writer, a passionate traveler, a tech enthusiast, or someone looking to broaden their horizons, we've created a space where your voice can be heard, valued, and celebrated. <br> <br>
+                <h3 style="color: rgb(207, 181, 230)" class="px-1">Why WeShares Community?</h3>
+                <p class="px-1"> We believe that knowledge is most powerful when shared, and that's why we've created this platform. WeShares Community is a place to:</p>
+                <ul>
+                    <li>Learn from one another</li>
+                    <li>Find inspiration for your next adventure</li>
+                    <li>Stay updated on the latest trends and innovations</li>
+                    <li>Share your own unique experiences and expertise</li>
+                </ul>
+                
+                
+                <br>
+                <br>
+                <p class="px-1">So, join us on this exciting journey of discovery, connection, and growth. Together, we can make the world a little smaller and a lot more connected. Welcome to WeShares Community – where sharing is caring, and community is everything. </p>
+                <br> <br>
+            </p>
+        </div>
+    </section>
+</main>
 
 {% endblock body %}
