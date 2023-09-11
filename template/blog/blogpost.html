@@ -91,7 +91,7 @@ body {
 
         <input type="hidden" name="postsno" value="{{userpost.sno}}">
         <input type="hidden" name="parentsno" value="">
-        <button type="submit" class="btn btn-success mt-4">Post Comment</button>
+        <button type="submit" class="btn  mt-4" style="background-color: purple; border-color: purple;  color: white;">Post Comment</button>
 
     </form>
 
@@ -108,7 +108,7 @@ body {
         {% for comment in comments %}
 
         <div class="container" >
-            <div class="col-md-11  mb-4 mx-1 p-2   w-75" style="color: rgb(196, 196, 196);  background-color: rgb(50, 22, 72);">
+            <div class="col-md-11  mb-4 mx-1 p-2   w-100" style="color: rgb(196, 196, 196);  background-color: rgb(50, 22, 72);">
                 <img class="rounded-circle    p-2 border border-dark mt-1" src="\static\pro.png" width="35px"
                     alt="no image" style="background-color: whitesmoke;">
                 <b
@@ -145,13 +145,15 @@ body {
                     </form>
                 </div>
 
-                <div class="replies  mx-5">
+                <div class="replies  mx-5" >
 
                     {% for reply in repdict|get_val:comment.sno %}
 
                     <span style="margin-bottom: 2px;">
-                    
-                        <big style="font-weight: 500; font-size: 16px; margin-left:20px;">@{{reply.user.get_username}} </big> 
+
+                        <img class="rounded-circle    p-2 border border-dark mt-1" src="\static\pro.png" width="32px"
+                        alt="no image" style="background-color: whitesmoke;">
+                        <big style="font-weight: 500; font-size: 16px; margin-left:0px;">{{reply.user.get_username}} </big> 
                     <small style="color: rgb(115, 115, 115); font-size: 13px;">{{reply.timestamp | naturaltime}} </small>
                      <br>
                     <small style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:400; font-size: 18px; margin-left: 45px; margin-top: 4px; ">  {{reply.comment}}</small>
