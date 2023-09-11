@@ -2,9 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
 
-# Create your models here.
-# user- gauravblog  
-#pass - Ab22558800 (22558800 for sql)
 
 class post(models.Model):
     sno=models.AutoField(primary_key=True)
@@ -30,3 +27,88 @@ class  handleComments(models.Model):
     def __str__(self):
         return self.comment[0:15]+ ".... by "+ self.user.username
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Create your models here.
+# user- gauravblog  
+#pass - Ab22558800 (22558800 for sql)

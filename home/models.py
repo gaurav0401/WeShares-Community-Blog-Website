@@ -1,7 +1,7 @@
 from django.db import models
 
 
-#superuser  user-gauravbhatt passwd-22558800
+
 
 # Create your models here.
 
@@ -18,3 +18,53 @@ class Contact(models.Model):
     
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#superuser  user-gauravbhatt passwd-22558800
