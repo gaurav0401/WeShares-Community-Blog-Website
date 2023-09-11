@@ -78,6 +78,7 @@
         </div>
 
         {% for post in allpost  %}
+        <hr class="mb-1">
         <div class="col p-4 d-flex flex-column position-static" >
             <strong class="d-inline-block mb-2 " style="color: rgb(178, 47, 71)">{{post.slug}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
@@ -85,7 +86,7 @@
             <p class="card-text mb-auto">{{post.content| safe | truncatechars:500}}</p>
             <a class="my-1" href="/blog/{{post.slug}} "  style="color: rgb(183, 179, 199);">Continue reading</a>
           </div>
-           <hr class="mb-1">
+           <!-- <hr class="mb-3"> -->
 
           {% endfor %}
 

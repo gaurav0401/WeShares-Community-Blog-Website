@@ -44,6 +44,7 @@ body {
         </div>
 
         {% for post  in  allpost reversed %}
+        <hr class="mb-1">
         <div class="col p-4 d-flex flex-column position-static" style=" color:white; ">
             <strong class="d-inline-block mb-2 " style=" color: rgb(178, 47, 71);">{{post.slug}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
@@ -54,7 +55,7 @@ body {
             </div>
            
           </div>
-          <hr class="my-1">
+          <!-- <hr class="mb-3"> -->
 
           {% endfor %}
 
