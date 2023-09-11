@@ -1,71 +1,37 @@
-<img src="https://www.fullstackpython.com/img/logos/django.png" alt="" width="180px"> <br> <br>
-<big > <b>NOTE: It is a good practice to create a projects in a virtual environment and create requirements.txt file
-  (contains all the packages required to run a project).</b></big>
-<p> Some most used commands</p>
-<ul>
-  <li>pip install virtualenv</li>
-  <li>virtualenv environment_name (to create new environment)</li>
-  <li> cd myenv (to use it)</li>
-  <li>Scripts/activate</li>
-  <li>pip install -r requirements.txt</li>
-  <li>pip freeze > requirements.txt</li>
-</ul>
-<p>1. django-admin startproject project1 ----------> for starting project. <br> <br>
-  2. python manage.py runserver
-  ----------------------> to start server. <br>  <br>
-  3. python manage.py startapp app1 ----------------------> to
-  start/create new app. <br> <br>
-  4. when we request for a page it first comes to the urls of urls of project then it will
-  pass to the urls of apps. <br>  <br>
-  <small>&nbsp; &nbsp; &nbsp; &nbsp;  syntax: 1. for project--------path('', include('app.urls')) <br> 
-                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  2. for app------- path('pagename', views.function_name , name="...") <br> </small> 
-  6. HttpResponse is use to render texts
-  <br>
-  <br>
-  7. render is used to render templates. ex: render(request , 'template name') <br> <br>
-  
-  8. for setting static files
-  directories <br> 
-  <small> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; STATICFILES_DIRS = [ <br>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; os.path.join(BASE_DIR, 'static') <br> 
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ] <br> </small> 
-    same to do with template find template section and add path <br> <br>
-  
-  9. for rendering variable in html page use {{a}} <br> <small>
-    &nbsp; &nbsp; &nbsp;  syntax: <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  #context is a set of variables to be passed in page <br> 
-    &nbsp; &nbsp; &nbsp; &nbsp; context={<br> 
-      &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   'a':45 <br> 
-      &nbsp; &nbsp; &nbsp; &nbsp; } <br>
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-    render(request , 'home.html' , context) </small> <br> <br>
-    
-  10. python manage.py makemigrations ------------>which is
-  responsible for creating new migrations based on the changes you have made to your models. <br> <br>
-  
-  11. python manage.py
-  migrate --------------->which is responsible for applying and unapplying migrations. <br> <br>
-  
-  12. python manage.py
-  createsuperuser --------------> for making super user of project. ----------------> a person who can modifed data of
-  admin page. <br>  <br>
-  
-  13. We can inherit one template into another template in Django. by creating block. <br> <br>
-  
-  14.https://source.unsplash.com/random/1600x600/?river&1 unsplash api <br> <br>
-  
-  15. To send the data to the backend we need to
-       create a model in a models.py moudle
-<ul>
-  <li>there we need to create a class named (whatever our purpose is) </li>
-  <li>then register that class in admin.py module using (admin.site.register(classname)) </li>
-  <li>then go to apps.py module and copy name of class and paste that name in settings.py module in installed app
-    sections as "appname.apps.classname" </li>
-  <li> then make migrations using "python manage.py makemigrations" </li>
-  <li> then run "python manage.py migrate " </li>
-  <li> now create instance of object of model class and pass data to that object. </li>
-  <li> Note : {% csrf_token %} must be used in html page before sending data to the backend. </li>
-</ul> <br>  <br>
+<p>When you’re searching for something to watch on a streaming platform with as big a catalog as Netflix has, it can get overwhelming. Even when you’ve narrowed down the genres, there are just too many things to watch. You don’t want to take a risk on a new movie, end up not liking it, and turn it off halfway through to find a new one and start the process all over again. To hopefully help you navigate the labyrinth of movies that is Netflix while searching for a new psychological thriller to watch, we’ve put together a list of great picks for you to watch during your next night on the couch. With any luck, you’ll find something that fits your fancy and you enjoy watching.</p>
+<br>
 
-16. from django.contrib.messages import constants as messages (for editing message status) <br>
+<p>Looking for more suspense? Check out the best thriller movies on Netflix, Hulu, and HBO, or the best movies on Netflix.</p>
+<br>
+<h3>I Care A Lot (2020)</h3>
 
-<br>17. from django.contrib import messages (for adding success and failure message ) <br></p>
+<img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/02/i-care-a-lot-rosamund-pike-vape-social.jpg?q=50&fit=crop&w=1500&dpr=1.5" alt="" height="150px">
+
+<p>Rarely does a female antihero come along where you feel tension for rooting for her schemes. Such is the case with the black comedy thriller, I Care A Lot, where a con woman makes her living by becoming the court-appointed guardian to vulnerable elders, convincing the courts that they’re unable to take care of themselves and seizing their assets. However, she finds herself in dangerous waters after she hijacks guardianship over a crime lord’s mother. The cat-and-mouse chase keeps you on the edge of your seat until the last moments of the film. Rosamund Pike stars as the meticulous yet manipulative con artist, unwilling to give up her enterprise without a fight; in fact, her electric performance won her a Golden Globe. — Meredith Loftus</p>
+<br>
+
+<h3>The Good Nurse (2022)</h3>
+<img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/10/the-good-nurse-eddie-redmayne-jessica-chastain-cropped.jpg?q=50&fit=crop&w=1500&dpr=1.5" alt="" height="150px">
+
+<p>
+  Jessica Chastain (The Eyes of Tammy Faye) stars opposite Eddie Redmayne in the dark and thrilling film The Good Nurse from director Tobias Lindholm (Mindhunter). Based on horrific true events, The Good Nurse follows an ICU nurse (Chastain) who begins to suspect her colleague (Redmayne) of causing deaths within the hospital where they work. Written by Krysty Wilson-Cairns, The Good Nurse maintains a foundation in reality, even as the high stakes of these two medical professionals are ultimately life or death. With captivating performances from the Oscar winners, The Good Nurse is two hours of heart-racing intensity. – Yael Tygiel
+</p>
+
+
+<br>
+
+<h3>Side Effects (2013)</h3>
+<img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/06/side-effects.jpeg?q=50&fit=crop&w=1500&dpr=1.5" alt="" height="150px">
+
+<p>
+  Side Effects was Steven Soderbergh’s last film before he reportedly “retired” from filmmaking, only to return nearly a year later. Soderbergh can be trusted to craft meticulous thrillers, but his collaborations with screenwriter Scott Z. Burns have been a high point; Burns adds a layer of insight into highly specific industries. Following the success of Contagion and The Informant!, Side Effects explores the pharmaceutical industry and the impacts of untested medical research. The tight, intimate thriller features strong work from Rooney Mara in particular, whose character is forced to reckon with the consequences of an experience she can’t even remember. — Liam Gaughan
+</p>
+
+
+<h3>The Woman in the Window (2021)</h3>
+<img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/04/the-woman-in-the-window-amy-adams-social.jpg?q=50&fit=crop&w=1500&dpr=1.5" alt="" height="150px">
+
+<p>
+  Nothing good can come from spying on your neighbors. Based on the 2018 novel of the same name by A.J. Finn, The Woman in the Window shows life from the perspective of Anna Fox (Amy Adams) a reclusive, agoraphobic woman who, aside from her basement tenant David (Wyatt Russell) lives by herself in a massive Manhattan brownstone. She passes the time by drinking, checking in with her estranged husband and their daughter, and keeping a watchful eye on her neighbors. She has a clear view into the home across the way, which was recently purchased by the Russell family. One night, she witnesses what she believes to be Alistair Russell (Gary Oldman) stabbing his wife Jane (Julianne Moore) to death in the living room. Anna calls the authorities, but has trouble convincing them of what she saw. Will the woman in the window be able to seek justice for her deceased neighbor? — Emily Bernard
+</p>
+
