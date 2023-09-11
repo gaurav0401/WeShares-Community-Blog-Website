@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
 from ckeditor.fields import RichTextField
+from autoslug import AutoSlugField
 
 
 class post(models.Model):
@@ -10,7 +11,8 @@ class post(models.Model):
     # content=models.CharField(max_length=10000)
     content=RichTextField(blank=True , null=True)
     author=models.CharField(max_length=20)
-    slug=models.CharField(max_length=120)
+    # slug=models.CharField(max_length=120 , unique=True)
+    slug=AutoSlugField(populate_from='title' , unique=True , null=True , default=None )
     date=models.DateTimeField()
     views=models.IntegerField( default=0)
     user =models.ForeignKey(User, on_delete=models.CASCADE , null=True)
