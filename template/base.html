@@ -61,10 +61,10 @@ margin-top: 20vh;
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
           aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
+          <div class="modal-dialog" style="color: black;">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Sign Up Here</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">Register Here</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -113,7 +113,7 @@ margin-top: 20vh;
 
                   <div class="modal-footer">
 
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: purple; border-color: purple;">Register</button>
                   </div>
                 </form>
               </div>
@@ -129,10 +129,10 @@ margin-top: 20vh;
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
+          <div class="modal-dialog" style="color: black;">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login Here</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Login Here</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -152,7 +152,7 @@ margin-top: 20vh;
                   </div>
                   <div class="modal-footer">
 
-                    <button type="submit" class="btn btn-primary"> Log In</button>
+                    <button type="submit" class="btn btn-primary" style=" background-color: purple; border-color: purple;"> Log In</button>
                   </div>
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                 </form>
@@ -161,30 +161,36 @@ margin-top: 20vh;
             </div>
           </div>
         </div>
-        <form class="d-flex mx-4" method="get" action="/search">
+        <form class="d-flex mx-4 mb-2 mt-2" method="get" action="/search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query"
             id="query">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn " style="color: purple; border-color: purple;" type="submit">Search</button>
         </form>
 
         {% if user.is_authenticated %}
         
-       
+       <div class="d-flex mx-4 ">
+
         <big class="my-2" style="font-weight: 400; padding-right: 10px;">{{request.user}}</big>
-        <img src="static/pro.png" class="rounded-circle" alt="" height="25px">
-        <button type="button" class="btn btn-success mx-4 my-2">
-          <a href="/logout" style="text-decoration: none; color: white;">Logout</a>
+        <img src="static/pro.png"  class="rounded-circle my-2" alt="" height="32px">
+        <button type="button" class="btn  mx-4 my-2" style="background-color: purple; border-color: purple;">
+          <a href="/logout" style="text-decoration: none; color: white; ">Logout</a>
         </button>
+       </div>
+     
       
         {% else %}
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Sign Up
-        </button>
 
-        <button type="button" class="btn btn-success mx-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="d-flex mx-4 ">  
+          <button type="button" class="btn btn-success my-2 "  style="background-color: purple; border-color: purple;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Sign Up
+          </button>
+
+        <button type="button" style="background-color: purple; border-color: purple;" class="btn btn-success mx-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Login
-        </button>
+        </button></div>
+       
         {% endif %}
       </div>
     </div>
