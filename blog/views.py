@@ -77,14 +77,15 @@ def postblog(request):
          title=request.POST['title']
          content=request.POST['content']
          author=request.POST['author']
-         slug=request.POST['slug']
+         category=request.POST['Category']
+         
          date=datetime.now()
          user = request.user
 
-         if (len(title)==0 or len(content)==0 or len(author)==0 or len(slug)==0):
+         if (len(title)==0 or len(content)==0 or len(author)==0):
             messages.error(request , "Please fill all the  fields properly before saving blog. ")
          else:
-            post=models.post(title=title, content=content , author=author, date=date , slug=slug , user=user)
+            post=models.post(title=title, content=content , author=author, date=date , category=category , user=user)
             post.save()
             messages.success(request , f"Your Blog has been published successfully...")
             return redirect(f'/blog/{post.slug}')

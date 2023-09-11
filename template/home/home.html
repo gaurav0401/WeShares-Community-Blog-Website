@@ -80,7 +80,7 @@
         {% for post in allpost  %}
         <hr class="mb-1">
         <div class="col p-4 d-flex flex-column position-static" >
-            <strong class="d-inline-block mb-2 " style="color: rgb(178, 47, 71)">{{post.slug}}</strong>
+            <strong class="d-inline-block mb-2 " style="color: rgb(178, 47, 71)">{{post.category}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
             <p class="card-text mb-auto">{{post.content| safe | truncatechars:500}}</p>

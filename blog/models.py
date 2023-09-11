@@ -11,7 +11,7 @@ class post(models.Model):
     # content=models.CharField(max_length=10000)
     content=RichTextField(blank=True , null=True)
     author=models.CharField(max_length=20)
-    # slug=models.CharField(max_length=120 , unique=True)
+    category=models.CharField(max_length=120 )
     slug=AutoSlugField(populate_from='title' , unique=True , null=True , default=None )
     date=models.DateTimeField()
     views=models.IntegerField( default=0)
