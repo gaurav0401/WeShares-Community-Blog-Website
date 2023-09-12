@@ -70,7 +70,7 @@
   <div class="container my-3 mt-5">
     <main>
         <h1>Welcome to WeShares Community</h1>
-        <p class="fs-5 col-md-8 mb-4"> <big> WeShares</big> is a blog website that aims to provide a platform for sharing and exchanging ideas, knowledge, and stories across a wide range of topics. The website's primary focus is on fostering a sense of community and collaboration among its users. Whether it's sharing personal experiences, expertise, or insights, WeShares is the go-to destination for individuals looking to connect and engage with a like-minded audience.</p>
+        <p class=" col-md-8 mb-4" style="font-size: 20px;"> <big> WeShares</big> is a blog website that aims to provide a platform for sharing and exchanging ideas, knowledge, and stories across a wide range of topics. The website's primary focus is on fostering a sense of community and collaboration among its users. Whether it's sharing personal experiences, expertise, or insights, WeShares is the go-to destination for individuals looking to connect and engage with a like-minded audience.</p>
     
         <div class="mb-5">
           <a href="/createblog" class="btn btn-primary btn-lg px-4" style="background-color: purple; border-color: purple;"><i class="fa-solid fa-pen-to-square"></i> Write a new  Blog</a>
@@ -90,7 +90,7 @@
         <hr class="mb-1">
         <div class="col p-4 d-flex flex-column position-static" >
             <strong class="d-inline-block mb-2 " style="color: rgb(178, 47, 71)">{{post.category}}</strong>
-            <h3 class="mb-0">{{post.title}}</h3>
+            <h1 class="mb-0">{{post.title}}</h1>
             <div class="mb-1 text-muted">{{post.date}}</div>
             <p class="card-text mb-auto" > <div class="preview">{{post.content| safe | truncatechars:500}}</div> </p>
             <a class="my-1" href="/blog/{{post.slug}} "  style="color: rgb(183, 179, 199);">Continue reading</a>
