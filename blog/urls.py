@@ -13,8 +13,6 @@ urlpatterns = [
     path('blog' , views.blog , name="blog"),
     path('about', about , name="blogabout"),
     path('', views.bloghome , name="bloghome"),
-    
-
     path('<str:slug>', views.blogpost , name="blogpost"),
 
     

@@ -2,6 +2,15 @@
 {% block head %}{% endblock head %}
 {% block title %}Home{% endblock title %}
 {% block homeactive %} active{% endblock homeactive %}
+
+{% block js %}
+   <script>
+    let previews= document.getElementByClassName('preview');
+    Array.from(previews).forEach((element)=>{
+        element.innerHTML = element.innerText;
+    })
+</script>
+{% endblock js %}
 {% block body %}
   
 
@@ -83,7 +92,7 @@
             <strong class="d-inline-block mb-2 " style="color: rgb(178, 47, 71)">{{post.category}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
-            <p class="card-text mb-auto">{{post.content| safe | truncatechars:500}}</p>
+            <p class="card-text mb-auto" > <div class="preview">{{post.content| safe | truncatechars:500}}</div> </p>
             <a class="my-1" href="/blog/{{post.slug}} "  style="color: rgb(183, 179, 199);">Continue reading</a>
           </div>
            <!-- <hr class="mb-3"> -->

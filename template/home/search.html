@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %} Search Results{% endblock title %}
-
+{% block js %}
+   <script>
+    let previews= document.getElementByClassName('preview');
+    Array.from(previews).forEach((element)=>{
+        element.innerHTML = element.innerText;
+    })
+</script>
+{% endblock js %}
 {% block body %}
 
 
@@ -22,7 +29,7 @@
             <strong class="d-inline-block mb-2 "  style="color: rgb(178, 47, 71);">By-{{post.author}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.date}}</div>
-            <p class="mb-auto">{{post.content| truncatechars:500}}</p>
+            <p class="mb-auto"> <div class="preview">{{post.content| truncatechars:500 | safe}}</div></p>
             <div class="my-2">
                 <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style="background-color: purple; border-color: purple;"> Continue reading</a>
             </div>
