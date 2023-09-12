@@ -52,12 +52,12 @@ body {
 
         <div class="col p-4 d-flex flex-column position-static">
 
-            <h2 class="mb-0">{{userpost.title}}</h2>
+            <h1 class="mb-0" style="font-family: minion-pro, serif;">{{userpost.title}}</h1>
 
 
-            <div class="mb-1 mt-1 text-muted mx-1"> Published by <a href="/about"
-                    style="font-weight: 500;">{{userpost.author}} </a> on {{userpost.date}}  <span> &nbsp; <i class="fa fa-eye" style="font-size: 13px;"></i> {{userpost.views}} views</span></div>
-            <p class="mb-auto py-4"><div class="preview">{{userpost.content | safe}}</div></p>
+            <div class="mb-1 mt-1 text-muted mx-1" style="font-family: minion-pro, serif; font-size: ; "> <small>Published by</small> <a href="/about"
+                    style="font-weight: 500;">{{userpost.author}} </a> on {{userpost.date}}  <span> &nbsp; <i class="fa fa-eye" style="font-size: 12px;"></i> {{userpost.views}} views</span></div>
+            <p class="mb-auto py-4"><div class="preview" style="font-family: minion-pro, serif; font-weight: 300; font-size: 18px; letter-spacing: 1px; ">{{userpost.content | safe}}</div></p>
 
             <div class="mb-2 mt-5 mx-1">
 
