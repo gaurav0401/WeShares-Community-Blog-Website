@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load humanize %}
 {% load get_dict %}
-{% block title %}BlogPost{% endblock title %}
+{% block title %}{{userpost.title}}{% endblock title %}
 
 
 {% block blogactive %} active{% endblock blogactive %}
@@ -62,8 +62,8 @@ font-weight: 300;
             <h1 class="mb-0" style="font-family: minion-pro, serif;">{{userpost.title}}</h1>
 
 
-            <div class="mb-1 mt-1 text-muted mx-1" style="font-family: minion-pro, serif; "> <small class="">By <a href="/about"
-                    style="font-weight: 500; letter-spacing: 1px; text-decoration: none; color: rgb(87, 87, 87); font-family: europa;">{{userpost.author}} </a> <br>Published on {{userpost.date}} <br> <span  style="font-size: 14px;"><i class="fa fa-eye" style="font-size: 11px;"></i> {{userpost.views}} views</span> </small> </div>
+            <div class="mb-1 mt-1 text-muted mx-1" style="font-family: minion-pro, serif;  "> <small class="">By <a href="/about"
+                    style="font-weight: 500; letter-spacing: 1px; text-decoration: none; color: rgb(87, 87, 87); font-family: europa;">{{userpost.author}} </a> <br> <small style="font-size: 13px;"> Published on {{userpost.date}} </small><br> <span  style="font-size: 14px;"><i class="fa fa-eye" style="font-size: 11px;"></i> {{userpost.views}} views</span> </small> </div>
             <p class="mb-auto py-2"><div class="preview" style="font-family: minion-pro, serif; font-weight: 300; font-size: 18px; letter-spacing: 1px; ">{{userpost.content | safe}}</div></p>
 
             <div class="mb-2 mt-5 mx-1">
