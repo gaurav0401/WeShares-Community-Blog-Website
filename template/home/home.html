@@ -93,7 +93,9 @@
             <h1 class="mb-0">{{post.title}}</h1>
             <div class="mb-1 " style="color: rgb(183, 179, 199);">{{post.date}}</div>
             <p class="card-text mb-auto" > <div class="preview">{{post.content| safe | truncatechars:500}}</div> </p>
-            <a class="my-1" href="/blog/{{post.slug}} "  style="color: rgb(183, 179, 199);">Continue read</a>
+            <div class="my-2">
+              <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style=" background-color: purple; border-color: purple;"> Continue read</a>
+          </div>
           </div>
            <!-- <hr class="mb-3"> -->
 
