@@ -13,7 +13,7 @@ from django.contrib.auth import logout, authenticate, login
 
 from blog.views import bloghome
 
-
+from  blog.forms import PostForm
 
 # Create your views here.
 
@@ -121,5 +121,9 @@ def handlelogout(request):
 
 
 def createblog(request):
-    return render(request , 'home/create.html')
+    form = PostForm
+    context = {
+        'form':form
+        }
+    return render(request , 'home/create.html' , context)
     
