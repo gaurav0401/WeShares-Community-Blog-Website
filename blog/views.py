@@ -7,13 +7,20 @@ from blog.templatetags import get_dict
 from . import models
 from django.contrib import messages 
 
+from django.core.paginator import Paginator
+
 
 # Create your views here.
 
 def bloghome(request):
     allpost=models.post.objects.all()
-  
-    context={'allpost':allpost}
+    
+    paginate=Paginator(allpost , 4)
+
+    page_no=request.GET.get('page')
+    final_data=paginate.get_page(page_no)
+    totalpage=final_data.paginator.num_pages
+    context={'allpost':allpost ,'allpost':final_data , 'totalpagelist':[n+1 for n in range(totalpage)] , 'lastpage':totalpage}
 
 
     return render(request , 'blog/bloghome.html' , context)

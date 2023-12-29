@@ -1,55 +1,58 @@
 {% extends 'base.html' %}
-{% block head %} <link rel="stylesheet" href="static\CSS\style.css">{% endblock head %}
+{% block head %}
+<link rel="stylesheet" href="static\CSS\style.css">{% endblock head %}
 {% block title %}Blogs{% endblock title %}
 
 {% block blogactive %} active{% endblock blogactive %}
 
 
 
-{% block body %} 
+{% block body %}
 
-{% block css  %}
+{% block css %}
 
 <style>
-
-body {
-    background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72));
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    color: whitesmoke;
-    font-family: 'poppins', sans-serif;
+    body {
+        background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color: whitesmoke;
+        font-family: 'poppins', sans-serif;
     }
-    
+
     @keyframes gradient {
-    0% {
-    background-position: 0% 50%;
-    }
-    50% {
-    background-position: 100% 50%;
-    }
-    100% {
-    background-position: 0% 50%;
-    }
- }
- body{
+        0% {
+            background-position: 0% 50%;
+        }
 
-font-family: minion-pro, serif;
-letter-spacing: 1px;
-font-weight: 300;
+        50% {
+            background-position: 100% 50%;
+        }
 
-}
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    body {
+
+        font-family: minion-pro, serif;
+        letter-spacing: 1px;
+        font-weight: 300;
+
+    }
 </style>
 
 {% endblock %}
 
-<div class="container my-5" >
+<div class="container my-5">
 
-    <div class="card" style=" background-color: rgb(50, 22, 72);" >
+    <div class="card" style=" background-color: rgb(50, 22, 72);">
         <div class="card-header mt-2">
-          <h2>Articles by WeShares Community</h2>
+            <h2>Articles by WeShares Community</h2>
         </div>
 
-        {% for post  in  allpost reversed %}
+        {% for post in allpost reversed %}
         <hr class="mb-1">
         <div class="col p-4 d-flex flex-column position-static" style=" color:white; ">
             <strong class="d-inline-block mb-2 " style=" color: rgb(178, 47, 71); font-family: minion-pro, serif;
@@ -65,20 +68,47 @@ font-weight: 300;
             letter-spacing: 1px;
             font-weight: 300;">{{post.content| safe |truncatechars:500}}</p>
             <div class="my-2">
-                <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style=" background-color: purple; border-color: purple;"> Read More <i class="fa fa-angle-double-right" style="color: #ffffff; font-size: 12px;"></i></a>
+                <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary"
+                    style=" background-color: purple; border-color: purple;"> Read More <i
+                        class="fa fa-angle-double-right" style="color: #ffffff; font-size: 12px;"></i></a>
             </div>
-           
-          </div>
-          <!-- <hr class="mb-3"> -->
 
-          {% endfor %}
+        </div>
+        <!-- <hr class="mb-3"> -->
 
-        
-      </div>
+        {% endfor %}
 
-    
+
+    </div>
+
+
 </div>
 
+<nav aria-label="Page navigation " class="container " >
+    <ul class="pagination " style="justify-content: center;"  >
+        {% if allpost.has_previous %}
+        <li class="page-item" ><a class="page-link  " 
+                href="/blog/?page={{allpost.previous_page_number}}" style=" background-color: purple; border-color: black; color:white; ">Previous</a></li>
+        {% endif%}
 
+        {%if lastpage > 1 %}
+        {% for i in totalpagelist %}
+        <li class="page-item" ><a class="page-link  " style=" background-color: purple; border-color: black; color:white; " href="/blog/?page={{i}}">{{i}}</a></li>
+        <!--           
+      <li class="page-item"><a class="page-link  bg-dark text-white" href="/?page=2">2</a></li>
+      <li class="page-item"><a class="page-link  bg-dark text-white" href="/?page=3">3</a></li> -->
+        {% endfor %}
+        {%endif %}
+
+        {% if allpost.has_next %}
+        <li class="page-item" ><a class="page-link  " style=" background-color: purple; border-color: black; color:white; " href="/blog/?page={{image.next_page_number}}">Next</a>
+        </li>
+        {% endif%}
+
+        {% if lastpage > 2%}
+        <li class="page-item"><a class="page-link " style=" background-color: purple; border-color: black;  color:white; " href="/blog/?page={{lastpage}}">Last</a></li>
+        {% endif%}
+    </ul>
+</nav>
 
 {% endblock body %}

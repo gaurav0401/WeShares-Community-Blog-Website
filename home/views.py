@@ -18,7 +18,7 @@ from  blog.forms import PostForm
 # Create your views here.
 
 def home(request):
-     allpost=models.post.objects.all()[::-2]
+     allpost=models.post.objects.all()[::-5]
   
      context={'allpost':allpost}
 
