@@ -88,12 +88,12 @@
     <ul class="pagination " style="justify-content: center;"  >
         {% if allpost.has_previous %}
         <li class="page-item" ><a class="page-link  " 
-                href="/blog/?page={{allpost.previous_page_number}}" style=" background-color: purple; border-color: black; color:white; ">Previous</a></li>
+                href="/blog/?page={{allpost.previous_page_number}}" style=" background-color: rgba(128, 0, 128, 0.552); border-color: rgb(50, 22, 72); color:white; ">Previous</a></li>
         {% endif%}
 
         {%if lastpage > 1 %}
         {% for i in totalpagelist %}
-        <li class="page-item" ><a class="page-link  " style=" background-color: purple; border-color: black; color:white; " href="/blog/?page={{i}}">{{i}}</a></li>
+        <li class="page-item" ><a class="page-link  " style=" background-color: rgba(128, 0, 128, 0.552); border-color: rgb(50, 22, 72); color:white; " href="/blog/?page={{i}}">{{i}}</a></li>
         <!--           
       <li class="page-item"><a class="page-link  bg-dark text-white" href="/?page=2">2</a></li>
       <li class="page-item"><a class="page-link  bg-dark text-white" href="/?page=3">3</a></li> -->
@@ -101,12 +101,12 @@
         {%endif %}
 
         {% if allpost.has_next %}
-        <li class="page-item" ><a class="page-link  " style=" background-color: purple; border-color: black; color:white; " href="/blog/?page={{image.next_page_number}}">Next</a>
+        <li class="page-item" ><a class="page-link  " style=" background-color: rgba(128, 0, 128, 0.552); border-color: rgb(50, 22, 72); color:white; " href="/blog/?page={{image.next_page_number}}">Next</a>
         </li>
         {% endif%}
 
         {% if lastpage > 2%}
-        <li class="page-item"><a class="page-link " style=" background-color: purple; border-color: black;  color:white; " href="/blog/?page={{lastpage}}">Last</a></li>
+        <li class="page-item"><a class="page-link " style=" background-color: rgba(128, 0, 128, 0.552); border-color: rgb(50, 22, 72);  color:white; " href="/blog/?page={{lastpage}}">Last</a></li>
         {% endif%}
     </ul>
 </nav>
