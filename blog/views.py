@@ -13,7 +13,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 def bloghome(request):
-    allpost=models.post.objects.all()
+    allpost=models.post.objects.all().order_by('date')
     
     paginate=Paginator(allpost , 4)
 

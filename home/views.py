@@ -18,7 +18,7 @@ from  blog.forms import PostForm
 # Create your views here.
 
 def home(request):
-     allpost=models.post.objects.all()[::-3]
+     allpost=models.post.objects.all().order_by('-date')[:3]
   
      context={'allpost':allpost}
 
