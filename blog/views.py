@@ -73,7 +73,7 @@ def postComment(request):
          messages.success(request , f"Your Comment has been recorded...")
          return redirect(f'/blog/{post.slug}' )
     else:
-        messages.warning(request , f"Login first to make comment on the article.")
+        messages.warning(request , f"Please login first to make comments on the article.")
         return redirect('/blog/')
 
     return redirect(f'/blog/' )

@@ -121,9 +121,14 @@ def handlelogout(request):
 
 
 def createblog(request):
-    form = PostForm
-    context = {
-        'form':form
-        }
-    return render(request , 'home/create.html' , context)
+    if request.user.is_authenticated:
+        form = PostForm
+        context = {
+                    'form':form
+                  }
+        return render(request , 'home/create.html' , context)
+    else:
+        messages.warning(request , f"Please login first to write a new blog.")
+    return redirect('home')
+
     
