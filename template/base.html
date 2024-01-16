@@ -263,7 +263,7 @@ body{
   
     <!-- Copyright -->
     <div class="text-center pb-3" >
-      © 2023 Copyright <br>
+     <span> Copyright ©  <small id="year"></small></span> WeShares Community | All rights reserved. <br>
       <a class="text-light" href="https://gaurav-bhatt-s-portfolio.vercel.app/">Design & Developed by Gaurav Bhatt</a>
     </div>
     <!-- Copyright -->
@@ -273,8 +273,17 @@ body{
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-
+    crossorigin="anonymous">
+  
+  
+      
+  
+  </script>
+  <script>
+      const yearSpan=document.querySelector('#year')
+        const curYear= new Date()
+        yearSpan.innerHTML=curYear.getFullYear()
+  </script>
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
