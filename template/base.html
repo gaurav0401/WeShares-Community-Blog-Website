@@ -9,37 +9,40 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
- <link rel="stylesheet" href="static\CSS\style.css">
-    <link rel="shortcut icon" href="\static\favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="static\CSS\style.css">
+  <link rel="shortcut icon" href="\static\favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   {% block head %}{% endblock head %}
   <title>{% block title %}{% endblock title %} | WeShares</title>
   <style>
-    footer{
-
-    
-background-color: rgb(237, 237, 237);
-color: black;
-margin-top: 20vh;
+    footer {
 
 
+      background-color: rgb(237, 237, 237);
+      color: black;
+      margin-top: 20vh;
 
-}
 
-body{
 
-  font-family: minion-pro, serif;
-  letter-spacing: 1px;
-  font-weight: 300;
-  
-}
+    }
+
+    body {
+
+      font-family: minion-pro, serif;
+      letter-spacing: 1px;
+      font-weight: 300;
+
+    }
   </style>
 </head>
 
 <body>
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-light"  style="background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72)); color: white;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-light"
+    style="background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72)); color: white;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">WeShares</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -67,11 +70,11 @@ body{
 
         </ul>
 
-       
+
 
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-          aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog" style="color: white;  ">
             <div class="modal-content" style="background-color: rgb(50, 22, 72);">
               <div class="modal-header">
@@ -124,7 +127,8 @@ body{
 
                   <div class="modal-footer">
 
-                    <button type="submit" class="btn btn-primary" style="background-color: purple; border-color: purple;">Register</button>
+                    <button type="submit" class="btn btn-primary"
+                      style="background-color: purple; border-color: purple;">Register</button>
                   </div>
                 </form>
               </div>
@@ -163,7 +167,8 @@ body{
                   </div>
                   <div class="modal-footer">
 
-                    <button type="submit" class="btn btn-primary" style=" background-color: purple; border-color: purple;"> Log In</button>
+                    <button type="submit" class="btn btn-primary"
+                      style=" background-color: purple; border-color: purple;"> Log In</button>
                   </div>
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                 </form>
@@ -179,29 +184,32 @@ body{
         </form>
 
         {% if user.is_authenticated %}
-        
-       <div class="d-flex mx-4 ">
 
-        <big class="my-2" style="font-weight: 400; padding-right: 10px;">{{request.user}}</big>
-        <img src="/static/pro.png"  class="rounded-circle my-2" alt="" height="32px">
-        <button type="button" class="btn  mx-4 my-2" style="background-color: purple; border-color: purple;">
-          <a href="/logout" style="text-decoration: none; color: white; ">Logout</a>
-        </button>
-       </div>
-     
-      
+        <div class="d-flex mx-4 ">
+
+          <big class="my-2" style="font-weight: 400; padding-right: 10px;">{{request.user}}</big>
+          <img src="/static/pro.png" class="rounded-circle my-2" alt="" height="32px">
+          <button type="button" class="btn  mx-4 my-2" style="background-color: purple; border-color: purple;">
+            <a href="/logout" style="text-decoration: none; color: white; ">Logout</a>
+          </button>
+        </div>
+
+
         {% else %}
         <!-- Button trigger modal -->
 
-        <div class="d-flex mx-4 ">  
-          <button type="button" class="btn btn-success my-2 "  style="background-color: purple; border-color: purple;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Sign Up
+        <div class="d-flex mx-4 ">
+          <button type="button" class="btn btn-success my-2 " style="background-color: purple; border-color: purple;"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Sign Up
           </button>
 
-        <button type="button" style="background-color: purple; border-color: purple;" class="btn btn-success mx-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Login
-        </button></div>
-       
+          <button type="button" style="background-color: purple; border-color: purple;"
+            class="btn btn-success mx-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Login
+          </button>
+        </div>
+
         {% endif %}
       </div>
     </div>
@@ -229,42 +237,40 @@ body{
 
 
 
-  <footer class="text-center"   id="contact " style="margin-top: 68vh; background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72));  color: white;"   >
+  <footer class="text-center" id="contact "
+    style="margin-top: 68vh; background: linear-gradient(-45deg, rgb(44, 6, 65), rgb(22, 34, 72), rgb(44, 6, 65), rgb(50, 22, 72));  color: white;">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Social media -->
       <section class="mb-4">
-        
-          <!--Call -->
-          <a class="btn btn-outline-light btn-floating m-1" href="tel:7017501776" role="button"
-          ><i class="fa fa-phone"></i
-        ></a>
+
+        <!--Call -->
+        <a class="btn btn-outline-light btn-floating m-1" href="tel:7017501776" role="button"><i
+            class="fa fa-phone"></i></a>
         <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/gaurav-bhatt-b927321a6/" role="button"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/gaurav-bhatt-b927321a6/"
+          role="button"><i class="fab fa-linkedin-in"></i></a>
 
-         <!-- Github -->
-         <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/gaurav_04_01/" role="button"
-         ><i class="fab fa-instagram"></i
-       ></a>
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/gaurav_04_01/"
+          role="button"><i class="fab fa-instagram"></i></a>
 
-      
+
 
         <!-- Email -->
-        <a class="btn btn-outline-light btn-floating m-1" href="mailto:gauravbhatt0401@gmail.com" role="button"
-          ><i class="fa fa-envelope"></i
-        ></a>
-  
+        <a class="btn btn-outline-light btn-floating m-1" href="mailto:gauravbhatt0401@gmail.com" role="button"><i
+            class="fa fa-envelope"></i></a>
+
       </section>
       <!-- Section: Social media -->
     </div>
     <!-- Grid container -->
-  
+
     <!-- Copyright -->
-    <div class="text-center pb-3" >
-     <span style="font-size: 2vh;"> Copyright ©  <small id="year"></small> WeShares | All rights reserved </span><br>
-      <a style="font-size: 2vh;" class="text-light" href="https://gaurav-bhatt-s-portfolio.vercel.app/">Design & Developed by Gaurav Bhatt</a>
+    <div class="text-center pb-3">
+      <span style="font-size: 2vh;"> Copyright © <small id="year"></small> WeShares | All rights reserved </span><br>
+      <a class="text-white" href="https://gaurav-bhatt-s-portfolio.vercel.app/"
+        style="text-decoration: underline; font-size: 2vh; ">Design & developed by Gaurav Bhatt</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -272,17 +278,16 @@ body{
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous">
-  
-  
-      
-  
-  </script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+
+
+
+
+    </script>
   <script>
-      const yearSpan=document.querySelector('#year')
-        const curYear= new Date()
-        yearSpan.innerHTML=curYear.getFullYear()
+    const yearSpan = document.querySelector('#year')
+    const curYear = new Date()
+    yearSpan.innerHTML = curYear.getFullYear()
   </script>
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
