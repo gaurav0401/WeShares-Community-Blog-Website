@@ -52,7 +52,7 @@ font-weight: 300;
 
 
 <div class="container my-5">
-
+    {% load social_share %}
     <div class="card" style="color: black; background-color: whitesmoke;">
 
 
@@ -65,9 +65,21 @@ font-weight: 300;
             <div class="mb-1 mt-1 text-muted mx-1" style="font-family: minion-pro, serif;  "> <small class="">By <a href="/about"
                     style="font-weight: 500; letter-spacing: 1px; text-decoration: none; color: rgb(87, 87, 87); font-family: europa;">{{userpost.author}} </a> <br> <small style="font-size: 13px;"> Published on {{userpost.date}} </small><br> <span  style="font-size: 14px;"><i class="fa fa-eye" style="font-size: 11px;"></i> {{userpost.views}} views</span> </small> </div>
             <p class="mb-auto py-2"><div class="preview" style="font-family: minion-pro, serif; font-weight: 300; font-size: 18px; letter-spacing: 1px; ">{{userpost.content | safe}}</div></p>
-
+           
+           
+           
+         
+            <div class="social mx-4" style="display: flex; flex-direction: row; align-content: space-between; margin-top: 6vh; margin-bottom: 5vh; ">
+                <i class="fa-solid fa-share-nodes"  style="margin-right: 8px;font-size: x-large;"> </i>
+                {% post_to_facebook object_or_url  '<i class="fa-brands fa-facebook" style="font-size: x-large; margin-right: 8px;"></i>' %}
+                {% post_to_twitter "New Blog: {{object.title}}. Check it out!" object_or_url '<i class="fa-brands fa-twitter" style="color: black; font-size: x-large; margin-right: 8px;"></i>' %}
+                {% post_to_whatsapp  object_or_url '<i class="fa-brands fa-whatsapp" style=" margin-right: 8px;font-size: x-large;color: green;"></i>' %}
+                <!-- {% post_to_linkedin object_or_url  '<i class="fa-brands fa-linkedin"></i>' %} -->
+            </div>
+            
+              
             <div class="mb-2 mt-5 mx-1">
-
+    
                 {% if user.get_username == userpost.user.username %}
                 <a href="deleteblog/{{userpost.sno}}" class="btn btn-danger btn-sm px-4">Delete This Article</a>
                 {% endif %}
